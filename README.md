@@ -22,8 +22,8 @@ Isolation is crucial when multiple transactions occur concurrently. It ensures t
 
 *Key Concept*
 - Transactions are serializable, meaning, when the final database state is the same whether transactions are executed:
-  - In serial order (one after another)
-  - In an interleaved fashion (concurrently)
+1. In serial order (one after another)
+2. In an interleaved fashion (concurrently)
 - Prevents issues like dirty reads, phantom reads, and non-repeatable reads
 
 ### Durability
@@ -31,8 +31,8 @@ This property ensures that once a transaction is committed, its updates are perm
 
 - Committed transaction updates must never be lost
 - System must be able to recover committed transactions even if:
-  - The system crashes
-  - Storage media fails
+1. The system crashes
+2.  Storage media fails
 - Typically implemented through transaction logs and backup mechanisms
 
 ## Normalization
@@ -111,7 +111,7 @@ Normalization rules are divided into several normal forms, each building upon th
 - Contains no transitive dependencies
 - If A - B and B - C, then A - C (this transitive dependency should be eliminated)
 
-*Examples:*
+*3NF Examples:*
 
 *Before 3NF:*
 ![new table](/images/new%20table.jpg)
