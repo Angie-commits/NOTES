@@ -1,4 +1,4 @@
-# ACID Properties and Normalization 
+# ACID Properties and Database Normalization 
 ## ACID Properties
 
 ACID Properties are the fundamental principles that ensure reliable processing of database transactions. ACID stands for *Atomicity, **Consistency, **Isolation, and **Durability*.
@@ -20,8 +20,8 @@ This property ensures that any changes to values in a database instance are cons
 ### Isolation
 Isolation is crucial when multiple transactions occur concurrently. It ensures that concurrent transactions do not interfere with each other.
 
-*Key Concept: Serializability*
-- Transactions are serializable when the final database state is the same whether transactions are executed:
+*Key Concept*
+- Transactions are serializable, meaning, when the final database state is the same whether transactions are executed:
   - In serial order (one after another)
   - In an interleaved fashion (concurrently)
 - Prevents issues like dirty reads, phantom reads, and non-repeatable reads
@@ -39,10 +39,10 @@ This property ensures that once a transaction is committed, its updates are perm
 
 Normalization is a systematic technique used to organize data in a database to reduce redundancy and improve data integrity.
 
-### Purpose of Normalization
+### Purposes of Normalization
 
 1. *Remove data redundancy* - Eliminate duplicate data storage
-2. *Ensure proper data dependencies* - Maintain logical relationships between data
+2. *Ensure proper data dependencies* - Maintain relationships between data that make sense
 
 ### Database Anomalies
 
@@ -109,12 +109,9 @@ Normalization rules are divided into several normal forms, each building upon th
 *Rules:*
 - Must be in 2NF
 - Contains no transitive dependencies
-- If A â B and B â C, then A â C (this transitive dependency should be eliminated)
+- If A - B and B - C, then A - C (this transitive dependency should be eliminated)
 
-*Transitive Dependency Example:*
-If Student_ID â Department and Department â Department_Head, then Student_ID â Department_Head is a transitive dependency.
-
-*Example:*
+*Examples:*
 
 *Before 3NF:*
 ![new table](/images/new%20table.jpg)
@@ -139,7 +136,7 @@ BCNF is a higher version of 3NF that deals with certain anomalies not handled by
 
 *Rules:*
 - Must be in 3NF
-- For each functional dependency (X â Y), X should be a super key
+- For each functional dependency (X - Y), X should be a super key
 - A 3NF table that does not have multiple overlapping candidate keys is in BCNF
 
 *When to use BCNF:*
@@ -149,4 +146,4 @@ BCNF is a higher version of 3NF that deals with certain anomalies not handled by
 
 *Benefits:*
 - Eliminates all anomalies related to functional dependencies
-- Provides the highest level of normalization for most practical purposes
+- Provides the highest level of normalization
